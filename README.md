@@ -17,7 +17,7 @@ Software Development.
 ## Google Drive Folder
 All original documents and certificates are stored in the Google Drive folder below:
 
-🔗 [PASTE_GOOGLE_DRIVE_LINK_HERE](https://drive.google.com/drive/folders/12f6OsNMuM0Yeu0QVld7jxgMORuWo_m4Y?usp=sharing)
+🔗 [GOOGLE DRIVE LINK](https://drive.google.com/drive/folders/12f6OsNMuM0Yeu0QVld7jxgMORuWo_m4Y?usp=sharing)
 
 ## Purpose
 This repository is created for university applications,
