@@ -11,7 +11,8 @@ Software Development.
 ## Contents
 - 📄 Professional Portfolio (PDF)
 - 🎓 Certificates & Achievements
-- 🥋 Taekwondo 2nd Dan (2단)
+- 🥋 Taekwondo 2nd Dan <img src="images/profile.jpg" alt="My Photo" width="200">
+
 - 🌐 Language Proficiency (TOPIK Level 6)
 
 ## Google Drive Folder
