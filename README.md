@@ -1,28 +1,27 @@
 # Ulugbek Amankulov – Professional Portfolio
 
-This repository contains my academic and professional portfolio,
-including portfolio documents and certificates collected so far.
+This repository hosts the source code for my personal portfolio website.
 
-## About Me
-I am a high school student in South Korea preparing for university studies
-in Business Marketing / Business Administration, with a background in
-Software Development.
+You can view the live site here: [https://ulugbek607.github.io/](https://ulugbek607.github.io/)
+
+## About This Project
+
+This is a simple, single-page portfolio website built with HTML, CSS, and JavaScript. It is designed to be a clean and modern showcase of my skills, experience, and achievements.
 
 ## Contents
-- 📄 Professional Portfolio (PDF)
-- 🎓 Certificates & Achievements
-- 🥋 Taekwondo 2nd Dan <img src="images/profile.jpg" alt="My Photo" width="200">
 
-- 🌐 Language Proficiency (TOPIK Level 6)
+The website includes the following sections:
 
-## Google Drive Folder
-All original documents and certificates are stored in the Google Drive folder below:
+*   **About Me:** A brief introduction to my background and goals.
+*   **Portfolio:** A link to my detailed professional portfolio in PDF format.
+*   **Certificates:** A gallery of my most important certificates.
+*   **Volunteering, Hobby, Academic Background, and Future Plans:** Placeholder sections that will be updated in the future.
 
-🔗 [GOOGLE DRIVE LINK](https://drive.google.com/drive/folders/12f6OsNMuM0Yeu0QVld7jxgMORuWo_m4Y?usp=sharing)
+## How to Run Locally
 
-## Purpose
-This repository is created for university applications,
-scholarships, and professional review.
+1.  Clone this repository.
+2.  Open the `index.html` file in your web browser.
 
 ## Status
+
 🚧 Actively updated.
