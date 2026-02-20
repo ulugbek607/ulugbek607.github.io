@@ -124,7 +124,7 @@ section:last-child {
 /* Certificate Gallery */
 .certificate-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Rasmlar uchun kattaroq min-width */
     gap: 1rem;
 }
 
@@ -136,6 +136,7 @@ section:last-child {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for images */
 .certificate-gallery img:hover {
     transform: scale(1.05);
 }
