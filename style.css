@@ -124,7 +124,7 @@ section:last-child {
 /* Certificate Gallery */
 .certificate-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Rasmlar uchun kattaroq min-width */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
@@ -136,7 +136,6 @@ section:last-child {
     transition: transform 0.3s ease;
 }
 
-/* Hover effect for images */
 .certificate-gallery img:hover {
     transform: scale(1.05);
 }
@@ -198,3 +197,5 @@ footer {
         transform: translateX(0px);
     }
 }
+
+shu yerdan korib ber
