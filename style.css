@@ -1,4 +1,4 @@
-/* ===== Minimal Portfolio Style ===== */
+/* ===== CLEAN MINIMAL UNIVERSITY PORTFOLIO ===== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
@@ -11,25 +11,26 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
-    color: #111;
-    line-height: 1.6;
+    background: #ffffff;
+    color: #111111;
+    line-height: 1.7;
 }
 
+/* ===== NAVIGATION ===== */
 
 header {
     position: fixed;
     width: 100%;
     top: 0;
     background: #ffffff;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #eeeeee;
     z-index: 1000;
 }
 
 nav {
     width: 85%;
     margin: auto;
-    height: 70px;
+    height: 75px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,28 +39,30 @@ nav {
 .logo a {
     text-decoration: none;
     color: #111;
+    font-weight: 600;
     font-size: 18px;
-    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 25px;
+    list-style: none;
+    gap: 28px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #555;
     font-size: 14px;
-    transition: 0.3s;
+    font-weight: 400;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #000;
 }
 
-/* Burger */
+/* ===== BURGER ===== */
 
 .burger {
     display: none;
@@ -73,38 +76,38 @@ nav {
     margin: 5px;
 }
 
-/* ===== HOME ===== */
+/* ===== HOME SECTION ===== */
 
 #home {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 140px;
+    padding-bottom: 100px;
 }
 
 .home-container {
     width: 85%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    gap: 60px;
     flex-wrap: wrap;
 }
 
 .home-text {
     flex: 1;
-    min-width: 280px;
+    min-width: 300px;
 }
 
 .home-text h2 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
 .home-text p {
-    font-size: 15px;
+    font-size: 16px;
     color: #555;
-    max-width: 500px;
+    max-width: 520px;
 }
 
 .home-image {
@@ -113,39 +116,50 @@ nav {
 }
 
 .home-image img {
-    width: 260px;
-    border-radius: 12px;
+    width: 280px;
+    border-radius: 14px;
     object-fit: cover;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== GENERAL SECTIONS ===== */
 
 section {
-    padding: 80px 10%;
+    padding: 100px 10%;
 }
 
 section h2 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #111;
+    margin-top: 10px;
 }
 
 section p {
     max-width: 700px;
-    color: #555;
     font-size: 15px;
+    color: #555;
 }
 
 /* ===== BUTTON ===== */
 
 .button {
     display: inline-block;
-    padding: 10px 22px;
+    margin-top: 15px;
+    padding: 10px 24px;
     border: 1px solid #111;
     text-decoration: none;
     color: #111;
     font-size: 14px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .button:hover {
@@ -158,25 +172,26 @@ section p {
 .certificate-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .certificate-gallery img {
-    width: 220px;
-    border-radius: 8px;
-    transition: 0.3s;
+    width: 230px;
+    border-radius: 10px;
+    transition: 0.3s ease;
 }
 
 .certificate-gallery img:hover {
-    opacity: 0.85;
+    transform: translateY(-5px);
+    opacity: 0.9;
 }
 
 /* ===== FOOTER ===== */
 
 footer {
-    border-top: 1px solid #eaeaea;
-    padding: 20px 0;
+    border-top: 1px solid #eeeeee;
+    padding: 30px 0;
     text-align: center;
     font-size: 13px;
     color: #777;
@@ -184,31 +199,7 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 
-@media (max-width: 768px) {
-
-    .nav-links {
-        position: absolute;
-        right: 0;
-        top: 70px;
-        height: 100vh;
-        width: 60%;
-        background: #fff;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
-        transform: translateX(100%);
-        transition: 0.4s ease;
-        border-left: 1px solid #eaeaea;
-    }
-
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    .burger {
-        display: block;
-    }
+@media (max-width: 900px) {
 
     .home-container {
         flex-direction: column;
@@ -217,5 +208,32 @@ footer {
 
     .home-text p {
         margin: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 75px;
+        height: 100vh;
+        width: 65%;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transform: translateX(100%);
+        transition: 0.4s ease;
+        border-left: 1px solid #eeeeee;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: block;
     }
 }
