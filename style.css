@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; /* Shriftlar o'zgartirildi */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -45,6 +45,8 @@ nav .logo h1 a {
 nav .nav-links {
     display: flex;
     list-style: none;
+    margin: 0; /* Qo'shildi: default margin'ni olib tashlash */
+    padding: 0; /* Qo'shildi: default padding'ni olib tashlash */
 }
 
 nav .nav-links li {
@@ -94,15 +96,20 @@ section:last-child {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap; /* Qo'shildi: mobil qurilmalarda kontentni o'rash */
 }
 
 #home .home-text {
     max-width: 60%;
+    text-align: center; /* Qo'shildi: matnni markazga joylashish */
+    margin-bottom: 2rem; /* Mobil qurilmalar uchun pastki margin */
 }
 
 #home .home-image img {
     max-width: 200px;
     border-radius: 50%;
+    display: block; /* Qo'shildi: rasmni blok darajasiga o'tkazish */
+    margin: 0 auto; /* Qo'shildi: rasmni markazga joylashish */
 }
 
 /* Button */
@@ -149,36 +156,45 @@ footer {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        right: 0px;
-        height: 92vh;
-        top: 8vh;
+    nav .nav-links {
+        position: fixed; /* 'absolute' o'rniga 'fixed' ishlatildi */
+        right: 0;
+        height: 100vh; /* Umumiy balandlikni to'liq qamrab olish */
+        top: 0; /* Yuqoriga bog'lash */
         background-color: #333;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 70%; /*Mobil menyuning kengligi */
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        z-index: 999; /* Navigatsiya menyusini boshqa elementlar ustida ko'rsatish */
+        justify-content: center; /* Menyularni vertikal joylashish */
     }
 
     .nav-links li {
+        margin: 1.5rem 0; /* Mobil menyu elementlari orasidagi bo'shliq */
         opacity: 0;
     }
 
     .burger {
         display: block;
+        z-index: 1001; /* Burger ikonkasini menyu ustida ko'rsatish */
     }
 
     #home .home-container {
         flex-direction: column;
+        padding-top: 2rem; /* Yuqoridan bo'shliq */
     }
 
     #home .home-text {
-        max-width: 100%;
+        max-width: 90%; /* Mobil qurilmalarda matn kengligini o'zgartirish */
         text-align: center;
         margin-bottom: 2rem;
+    }
+    
+    #home .home-image img {
+        max-width: 150px; /* Mobil qurilmalarda rasm hajmini kichraytirish */
     }
 }
 
@@ -197,4 +213,13 @@ footer {
     }
 }
 
-shu yerdan korib ber
+/* Burger animatsiyasi */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
