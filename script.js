@@ -1,23 +1,85 @@
-const navSlide = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+// ==========================================================================
+// Ulugbek Amankulov — Portfolio interactions
+// ==========================================================================
 
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------------- Mobile nav toggle ---------------- */
+  const burger = document.querySelector('.burger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (burger && navLinks) {
     burger.addEventListener('click', () => {
-        // Toggle Nav
-        nav.classList.toggle('nav-active');
-
-        // Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = ''
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-            }
-        });
-        // Burger Animation
-        burger.classList.toggle('toggle');
+      burger.classList.toggle('open');
+      navLinks.classList.toggle('open');
     });
-}
 
-navSlide();
+    // Close menu after a link is tapped (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+
+  /* ---------------- Active link highlight on scroll ---------------- */
+  const sections = document.querySelectorAll('main section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  const setActiveLink = (id) => {
+    navAnchors.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+    });
+  };
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setActiveLink(entry.target.id);
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(section => navObserver.observe(section));
+
+  /* ---------------- Reveal-on-scroll for sections ---------------- */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(section => revealObserver.observe(section));
+
+  /* ---------------- Certificate lightbox ---------------- */
+  const galleryImages = document.querySelectorAll('.certificate-gallery img');
+
+  if (galleryImages.length) {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    const overlayImg = document.createElement('img');
+    overlay.appendChild(overlayImg);
+    document.body.appendChild(overlay);
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        overlayImg.src = img.src;
+        overlayImg.alt = img.alt;
+        overlay.classList.add('open');
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.classList.remove('open');
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') overlay.classList.remove('open');
+    });
+  }
+
+});
